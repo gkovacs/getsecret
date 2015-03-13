@@ -1,0 +1,31 @@
+{
+  "name": "getsecret",
+  "version": "1.0.0",
+  "description": "a simple api for retrieving secrets stored in yaml files and environment variables",
+  "main": "getsecret.js",
+  "dependencies": {
+    "yamlfile": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gkovacs/getsecret.git"
+  },
+  "keywords": [
+    "secrets",
+    "yaml",
+    "environment",
+    "variables",
+    "keys",
+    "authentication"
+  ],
+  "author": "Geza Kovacs (http://github.com/gkovacs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gkovacs/getsecret/issues"
+  },
+  "homepage": "https://github.com/gkovacs/getsecret"
+}
