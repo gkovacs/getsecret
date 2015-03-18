@@ -8,10 +8,14 @@ cached_secrets = null
 
 getsecret_init = ->
   cached_secrets := {}
-  home_secrets = path.join process.env.HOME, '.getsecret.yaml'
-  if fs.existsSync home_secrets
-    for k,v of yamlfile.readFileSync home_secrets
-      cached_secrets[k] = v
+  homepath = process.env.HOME
+  if not homepath?
+    homepath = process.env.USERPROFILE # for windows
+  if homepath?
+    home_secrets = path.join homepath, '.getsecret.yaml'
+    if fs.existsSync home_secrets
+      for k,v of yamlfile.readFileSync home_secrets
+        cached_secrets[k] = v
   if fs.existsSync '.getsecret.yaml'
     for k,v of yamlfile.readFileSync '.getsecret.yaml'
       cached_secrets[k] = v

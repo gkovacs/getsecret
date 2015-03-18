@@ -6,13 +6,19 @@
   path = require('path');
   cached_secrets = null;
   getsecret_init = function(){
-    var home_secrets, k, ref$, v, results$ = [];
+    var homepath, home_secrets, k, ref$, v, results$ = [];
     cached_secrets = {};
-    home_secrets = path.join(process.env.HOME, '.getsecret.yaml');
-    if (fs.existsSync(home_secrets)) {
-      for (k in ref$ = yamlfile.readFileSync(home_secrets)) {
-        v = ref$[k];
-        cached_secrets[k] = v;
+    homepath = process.env.HOME;
+    if (homepath == null) {
+      homepath = process.env.USERPROFILE;
+    }
+    if (homepath != null) {
+      home_secrets = path.join(homepath, '.getsecret.yaml');
+      if (fs.existsSync(home_secrets)) {
+        for (k in ref$ = yamlfile.readFileSync(home_secrets)) {
+          v = ref$[k];
+          cached_secrets[k] = v;
+        }
       }
     }
     if (fs.existsSync('.getsecret.yaml')) {
