@@ -1,6 +1,6 @@
 {
   "name": "getsecret",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a simple api for retrieving secrets stored in yaml files and environment variables",
   "main": "getsecret.js",
   "dependencies": {

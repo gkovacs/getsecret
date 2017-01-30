@@ -10,7 +10,7 @@ A simple way to get credentials stored in yaml files and environment variables
 
 You can store secrets in 3 locations (in decreasing order of priority)
 
-* An environment variable. These are commonly used in Heroku. ex: process.env.some_keyname
+* An environment variable. These are commonly used in Heroku. ex: `process.env.some_keyname`
 
 * A file named `.getsecret.yaml` in your current directory
 
